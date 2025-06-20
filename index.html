@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUY $BUT</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 100px 20px 40px;
+    }
+    h1 {
+      font-size: 5rem;
+      margin: 0;
+    }
+    p.subtitle {
+      font-size: 1.5rem;
+      opacity: 0.8;
+      margin-top: 10px;
+    }
+    .links {
+      margin-top: 30px;
+    }
+    .links a {
+      margin: 0 10px;
+      color: #0ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section.narrative {
+      font-size: 2rem;
+      text-align: center;
+      padding: 80px 20px;
+      line-height: 2.5rem;
+    }
+    .narrative div {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .visible {
+      opacity: 1 !important;
+    }
+    footer {
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .buy-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #0ff;
+      color: #000;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BUY $BUT</h1>
+    <p class="subtitle">You believed in everything... <strong>but</strong> this?</p>
+    <div class="links">
+      <a href="#">CHART</a>
+      <a href="#">BUY</a>
+      <a href="#">X</a>
+    </div>
+  </header>
+
+  <section class="narrative" id="narrative">
+    <div>You bought the top... <strong>but</strong> sold the bottom.</div>
+    <div>You faded $DOGE, $PEPE... <strong>but</strong> aped $NOT.</div>
+    <div>They told you to DYOR... <strong>but</strong> you followed @rekttrader69.</div>
+    <div>You were early to everything... <strong>but</strong> missed $BUT.</div>
+    <div>It was never IF... it was always <strong>BUT</strong>.</div>
+  </section>
+
+  <footer>
+    <h1>$BUT</h1>
+    <a href="#" class="buy-button">BUY NOW</a>
+  </footer>
+
+  <script>
+    const lines = document.querySelectorAll('#narrative div');
+    let current = 0;
+    function showNext() {
+      if (current > 0) lines[current - 1].classList.remove('visible');
+      if (current < lines.length) {
+        lines[current].classList.add('visible');
+        current++;
+        setTimeout(showNext, 2000);
+      }
+    }
+    window.onload = showNext;
+  </script>
+</body>
+</html>
